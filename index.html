@@ -4,6 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>asinayo — 브랜드 곁의 스타일리스트를 발견하세요</title>
+<meta name="description" content="룩북 한 번으로 검증된 스타일리스트에게 브랜드를 소개하고, 협찬 매칭과 운영을 한 곳에서 시작하세요.">
+<meta property="og:title" content="asinayo — 브랜드 곁의 스타일리스트를 발견하세요">
+<meta property="og:description" content="룩북 한 번으로 검증된 스타일리스트에게 브랜드를 소개하고, 협찬 매칭과 운영을 한 곳에서 시작하세요.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200&h=630&fit=crop&q=80">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="asinayo — 브랜드 곁의 스타일리스트를 발견하세요">
+<meta name="twitter:description" content="룩북 한 번으로 검증된 스타일리스트에게 브랜드를 소개하고, 협찬 매칭과 운영을 한 곳에서 시작하세요.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200&h=630&fit=crop&q=80">
+<meta name="meta-pixel-id" content="REPLACE_WITH_ASINAYO_PIXEL_ID">
+<meta name="meta-capi-endpoint" content="/api/meta/capi">
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+</script>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
@@ -50,6 +73,7 @@
 </style>
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=REPLACE_WITH_ASINAYO_PIXEL_ID&ev=PageView&noscript=1"></noscript>
 
   <!-- NAV -->
   <div style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid #f0efed">
@@ -156,15 +180,25 @@
 
   <div style="max-width:1080px;margin:0 auto;padding:48px 28px 0" id="features"></div>
 
-  <!-- BROWSE — circular ring of stylists -->
+  <!-- BROWSE — interactive 3D rotating outfit gallery -->
   <div class="wrap" style="padding:116px 28px 0">
-    <div style="position:relative;max-width:760px;margin:0 auto;min-height:700px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center" id="ringWrap">
-      <div style="position:relative;z-index:3;padding:0 16px">
-        <div style="font:400 15px/1 'Newsreader',serif;font-style:italic;color:#a3a09a;margin-bottom:18px">Introduce your brand</div>
-        <h2 style="margin:0;font-size:46px;line-height:1.14;letter-spacing:-.03em;font-weight:800">함께할 스타일리스트에게<br><span style="color:#c8c6c1">브랜드를 소개해보세요</span></h2>
-        <p style="margin:18px auto 0;max-width:420px;font-size:16px;color:#86868b">룩북만 등록하면 스타일리스트들에게 소개됩니다.</p>
-        <a href="#waitlist" class="press" style="display:inline-flex;margin-top:28px;padding:13px 26px;background:#1d1d1f;color:#fff;font-size:15px;font-weight:600;border-radius:980px;text-decoration:none">브랜드 등록하기</a>
-      </div>
+    <div style="text-align:center;max-width:600px;margin:0 auto">
+      <div style="font:400 15px/1 'Newsreader',serif;font-style:italic;color:#a3a09a;margin-bottom:18px">Introduce your brand</div>
+      <h2 style="margin:0;font-size:46px;line-height:1.14;letter-spacing:-.03em;font-weight:800">함께할 스타일리스트에게<br><span style="color:#c8c6c1">브랜드를 소개해보세요</span></h2>
+      <p style="margin:18px auto 0;max-width:420px;font-size:16px;color:#86868b">룩북만 등록하면 스타일리스트들에게 소개됩니다.</p>
+    </div>
+
+    <!-- 3D rotating gallery -->
+    <div id="lookStage" style="position:relative;height:460px;margin-top:40px;perspective:1400px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none">
+      <div id="lookRing" style="position:absolute;top:50%;left:50%;width:240px;height:340px;margin:-170px 0 0 -120px;transform-style:preserve-3d"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;z-index:300;background:linear-gradient(90deg,#fff,rgba(255,255,255,0) 14%,rgba(255,255,255,0) 86%,#fff)"></div>
+    </div>
+
+    <div style="text-align:center;margin-top:14px">
+      <span style="font:500 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:#c2c0bb">← 드래그하여 둘러보세요 →</span>
+    </div>
+    <div style="text-align:center;margin-top:30px">
+      <a href="#waitlist" class="press" style="display:inline-flex;padding:13px 26px;background:#1d1d1f;color:#fff;font-size:15px;font-weight:600;border-radius:980px;text-decoration:none">브랜드 등록하기</a>
     </div>
   </div>
 
@@ -188,7 +222,9 @@
         <h2 style="margin:0;font-size:38px;line-height:1.16;letter-spacing:-.03em;font-weight:800;color:#fff">함께할 스타일리스트를<br>지금 만나보세요</h2>
         <p style="margin:18px 0 0;max-width:400px;font-size:16px;color:rgba(255,255,255,.62)">정식 오픈 시 브랜드 우선 초대 — 웨이트리스트에 합류하면 가장 먼저 안내드립니다.</p>
         <div id="waitlistCta" style="margin:32px 0 0">
-          <button id="waitlistBtn" class="press" style="display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:#fff;color:#1d1d1f;font-size:16px;font-weight:700;border:none;border-radius:980px;cursor:pointer;font-family:'Pretendard'">Waitlist 신청하기</button>
+          <form id="waitlistForm" style="margin:0">
+            <button id="waitlistBtn" type="submit" class="press" style="display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:#fff;color:#1d1d1f;font-size:16px;font-weight:700;border:none;border-radius:980px;cursor:pointer;font-family:'Pretendard'">Waitlist 신청하기</button>
+          </form>
           <p style="margin:16px 0 0;font-size:13px;color:rgba(255,255,255,.45)">1분이면 충분해요 · 별도 비용 없이 브랜드를 우선 초대해 드립니다.</p>
         </div>
         <div id="waitlistDone" style="margin-top:32px;display:none;align-items:center;gap:8px;padding:14px 24px;background:#fff;color:#1d1d1f;border-radius:980px;font-size:15px;font-weight:600">신청이 완료되었습니다 — 곧 연락드릴게요 ✓</div>
@@ -277,6 +313,63 @@
   </div>
 
 <script>
+  const asinayoTracking = (() => {
+    const pixelMeta = document.querySelector('meta[name="meta-pixel-id"]');
+    const capiMeta = document.querySelector('meta[name="meta-capi-endpoint"]');
+    const pixelId = (pixelMeta && pixelMeta.content ? pixelMeta.content : '').trim();
+    const capiEndpoint = (capiMeta && capiMeta.content ? capiMeta.content : '').trim();
+    const hasPixel = pixelId && !pixelId.includes('REPLACE_WITH');
+    const canPostCapi = hasPixel && capiEndpoint && /^https?:$/.test(window.location.protocol);
+
+    const getCookie = (name) => {
+      const prefix = `${name}=`;
+      return document.cookie.split(';').map(v => v.trim()).find(v => v.startsWith(prefix))?.slice(prefix.length) || '';
+    };
+    const getFbc = () => {
+      const existing = getCookie('_fbc');
+      const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+      return existing || (fbclid ? `fb.1.${Date.now()}.${fbclid}` : '');
+    };
+    const eventId = (eventName) => (
+      `asinayo.${eventName}.${Date.now()}.${Math.random().toString(36).slice(2, 10)}`
+    );
+    const postCapi = (eventName, id, customData) => {
+      if (!canPostCapi) return;
+      fetch(capiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true,
+        body: JSON.stringify({
+          event_name: eventName,
+          event_id: id,
+          event_source_url: window.location.href,
+          fbp: getCookie('_fbp'),
+          fbc: getFbc(),
+          custom_data: customData || {},
+        }),
+      }).catch(() => {});
+    };
+    const track = (eventName, customData = {}) => {
+      if (!hasPixel) return;
+      const id = eventId(eventName);
+      if (typeof fbq === 'function') {
+        fbq('track', eventName, customData, { eventID: id });
+      }
+      postCapi(eventName, id, customData);
+    };
+
+    if (hasPixel && typeof fbq === 'function') {
+      fbq('init', pixelId);
+    }
+    return { track };
+  })();
+
+  asinayoTracking.track('PageView', { content_name: 'asinayo_landing' });
+  asinayoTracking.track('ViewContent', {
+    content_name: 'asinayo_landing',
+    content_category: 'brand_stylist_matching',
+  });
+
   const P = (id) => `https://images.unsplash.com/photo-${id}?w=480&h=640&fit=crop&crop=faces&q=72`;
   const L = (id) => `https://images.unsplash.com/photo-${id}?w=640&h=860&fit=crop&q=72`;
 
@@ -287,23 +380,19 @@
     { ko: '라이프스타일', en: 'LIFESTYLE', img: L('1517841905240-472988babdf9') },
   ];
 
-  const ringImgs = [
-    '1438761681033-6461ffad8d80','1488426862026-3ee34a7d66df','1502823403499-6ccfcf4fb453',
-    '1524504388940-b1c1722653e1','1506794778202-cad84cf45f1d','1517841905240-472988babdf9',
-    '1487412720507-e7ab37603c6f','1494790108377-be9c29b29330','1485462537746-965f33f7f6a7',
-    '1485968579580-b6d095142e6e','1492447166138-50c3889fccb1','1483985988355-763728e1935b',
+  // 착장(룩) 이미지 — 3D 회전 갤러리에 사용
+  const looks = [
+    { img: L('1539109136881-3be0616acf4b'), name: 'STUDIO M', tag: 'EDITORIAL' },
+    { img: L('1485462537746-965f33f7f6a7'), name: 'JIWON',    tag: 'STREET' },
+    { img: L('1517841905240-472988babdf9'), name: 'ATELIER K', tag: 'LIFESTYLE' },
+    { img: L('1483985988355-763728e1935b'), name: 'NO.5',     tag: 'COMMERCE' },
+    { img: L('1485968579580-b6d095142e6e'), name: 'STUDIO M', tag: 'CAMPAIGN' },
+    { img: P('1488426862026-3ee34a7d66df'), name: 'JIWON',    tag: 'BEAUTY' },
+    { img: P('1494790108377-be9c29b29330'), name: 'NO.5',     tag: 'CLEAN' },
+    { img: P('1506794778202-cad84cf45f1d'), name: 'ATELIER K', tag: 'MENSWEAR' },
+    { img: P('1487412720507-e7ab37603c6f'), name: 'STUDIO M', tag: 'PORTRAIT' },
+    { img: P('1438761681033-6461ffad8d80'), name: 'JIWON',    tag: 'MOOD' },
   ];
-  const ringPos = [
-    { top: '6%', left: '50%', s: 96 }, { top: '14.4%', left: '74.7%', s: 122 },
-    { top: '36.4%', left: '89.9%', s: 86 }, { top: '63.6%', left: '89.9%', s: 108 },
-    { top: '85.6%', left: '74.7%', s: 84 }, { top: '94%', left: '50%', s: 116 },
-    { top: '85.6%', left: '25.3%', s: 92 }, { top: '63.6%', left: '10.1%', s: 104 },
-    { top: '36.4%', left: '10.1%', s: 86 }, { top: '14.4%', left: '25.3%', s: 118 },
-  ];
-  const ring = ringPos.map((p, i) => ({
-    img: P(ringImgs[i % ringImgs.length]),
-    style: `position:absolute;top:${p.top};left:${p.left};transform:translate(-50%,-50%);width:${p.s}px;height:${p.s}px;border-radius:980px;overflow:hidden;box-shadow:0 16px 34px -14px rgba(0,0,0,.22)`,
-  }));
 
   const features = [
     {
@@ -389,10 +478,70 @@
       </div>
     </div>`).join('');
 
-  // BROWSE RING (insert circles before the centered text block)
-  const ringWrap = document.getElementById('ringWrap');
-  ringWrap.insertAdjacentHTML('afterbegin', ring.map(r => `
-    <div style="${r.style}"><div style="width:100%;height:100%;background-image:url(${r.img});background-size:cover;background-position:center"></div></div>`).join(''));
+  // BROWSE — interactive 3D rotating outfit gallery
+  (function () {
+    const stage = document.getElementById('lookStage');
+    const ringEl = document.getElementById('lookRing');
+    if (!stage || !ringEl) return;
+
+    const n = looks.length;
+    const step = 360 / n;
+    const CARD_W = 240, CARD_H = 340;
+    const radius = Math.round((CARD_W / 2) / Math.tan(Math.PI / n)) + 64;
+
+    const cards = looks.map((lk, i) => {
+      const el = document.createElement('div');
+      el.style.cssText = `position:absolute;top:0;left:0;width:${CARD_W}px;height:${CARD_H}px;border-radius:20px;overflow:hidden;background:#e7e6e2;box-shadow:0 30px 60px -28px rgba(0,0,0,.4);transform:rotateY(${i * step}deg) translateZ(${radius}px);backface-visibility:hidden;will-change:opacity,filter`;
+      el.innerHTML = `
+        <div style="position:absolute;inset:0;background-image:url(${lk.img});background-size:cover;background-position:center"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 52%,rgba(0,0,0,.55) 100%)"></div>
+        <div style="position:absolute;left:16px;bottom:16px;right:16px;color:#fff">
+          <div style="font-size:15px;font-weight:700;letter-spacing:-.01em">${esc(lk.name)}</div>
+          <div style="font:600 10px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;color:rgba(255,255,255,.82);margin-top:6px">${esc(lk.tag)}</div>
+        </div>`;
+      ringEl.appendChild(el);
+      return el;
+    });
+
+    let angle = 0, vel = 0, dragging = false, lastX = 0;
+    const AUTO = -0.16; // 자동 회전 속도(기준)
+
+    function render() {
+      ringEl.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
+      for (let i = 0; i < cards.length; i++) {
+        const z = Math.cos((i * step + angle) * Math.PI / 180); // 1=정면 .. -1=뒷면
+        const t = (z + 1) / 2;
+        cards[i].style.opacity = (0.25 + 0.75 * t).toFixed(3);
+        cards[i].style.filter = `brightness(${(0.72 + 0.28 * t).toFixed(3)})`;
+        cards[i].style.zIndex = String(Math.round(t * 200));
+      }
+    }
+
+    function frame() {
+      if (!dragging) { vel += (AUTO - vel) * 0.05; angle += vel; }
+      render();
+      requestAnimationFrame(frame);
+    }
+
+    const px = (e) => e.touches ? e.touches[0].clientX : e.clientX;
+    function down(e) { dragging = true; lastX = px(e); stage.style.cursor = 'grabbing'; }
+    function move(e) {
+      if (!dragging) return;
+      const x = px(e), d = (x - lastX) * 0.3;
+      lastX = x; angle += d; vel = d;
+    }
+    function up() { dragging = false; stage.style.cursor = 'grab'; }
+
+    stage.addEventListener('mousedown', down);
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+    stage.addEventListener('touchstart', down, { passive: true });
+    stage.addEventListener('touchmove', move, { passive: true });
+    stage.addEventListener('touchend', up);
+
+    render();
+    requestAnimationFrame(frame);
+  })();
 
   // LOGOS
   document.getElementById('logos').innerHTML = logos.map(l => `
@@ -419,8 +568,13 @@
     });
   });
 
-  // WAITLIST BUTTON
-  document.getElementById('waitlistBtn').addEventListener('click', () => {
+  // WAITLIST FORM
+  document.getElementById('waitlistForm').addEventListener('submit', (event) => {
+    event.preventDefault();
+    asinayoTracking.track('Lead', {
+      content_name: 'asinayo_waitlist',
+      content_category: 'waitlist_form',
+    });
     document.getElementById('waitlistCta').style.display = 'none';
     document.getElementById('waitlistDone').style.display = 'inline-flex';
   });
