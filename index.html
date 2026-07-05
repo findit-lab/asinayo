@@ -374,10 +374,10 @@
   const L = (id) => `https://images.unsplash.com/photo-${id}?w=640&h=860&fit=crop&q=72`;
 
   const categories = [
-    { ko: '에디토리얼', en: 'EDITORIAL', img: L('1539109136881-3be0616acf4b') },
-    { ko: '스트릿·캐주얼', en: 'STREET · CASUAL', img: L('1485462537746-965f33f7f6a7') },
-    { ko: '뷰티·클린', en: 'BEAUTY · CLEAN', img: P('1494790108377-be9c29b29330') },
-    { ko: '라이프스타일', en: 'LIFESTYLE', img: L('1517841905240-472988babdf9') },
+    { ko: '에디토리얼', en: 'EDITORIAL', img: 'assets/category/에디토리얼.png' },
+    { ko: '캐주얼', en: 'CASUAL', img: 'assets/category/캐주얼.png' },
+    { ko: '뷰티크린', en: 'BEAUTY · CLEAN', img: 'assets/category/뷰티크린.png' },
+    { ko: '모던 라이프', en: 'MODERN LIFE', img: 'assets/category/모던 라이프.png' },
   ];
 
   // 브랜드 룩북 이미지 — 3D 회전 갤러리에 사용
@@ -433,7 +433,7 @@
   // CATEGORIES
   document.getElementById('cats').innerHTML = categories.map(c => `
     <div class="press" style="position:relative;aspect-ratio:3/4;border-radius:22px;overflow:hidden;background:#e7e6e2;cursor:pointer">
-      <div style="position:absolute;inset:0;background-image:url(${c.img});background-size:cover;background-position:center"></div>
+      <div style="position:absolute;inset:0;background-image:url('${c.img}');background-size:cover;background-position:center"></div>
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.42) 100%)"></div>
       <div style="position:absolute;left:18px;bottom:18px;right:18px">
         <div style="color:#fff;font-size:21px;font-weight:700;letter-spacing:-.02em">${esc(c.ko)}</div>
